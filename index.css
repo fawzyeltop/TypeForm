@@ -1,0 +1,122 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#hi-there {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#start {
+    position: relative;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid transparent;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 12px 0px;
+    padding: 8px 18px;
+    min-height: 48px;
+    background-color: rgb(4, 69, 175);
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    font-size: 24px;
+    line-height: 32px;
+    transition: all 0.3s ease-in-out;
+}
+
+.global-header {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.global-header-span {
+    font-weight: bold;
+    color: rgb(4, 69, 175);
+}
+
+.global-header-span svg {
+    fill: rgb(4, 69, 175);
+    transition: fill 0.2s ease 0s;
+}
+
+.global-header-ul {
+    list-style-type: none;
+    margin-top: 8px;
+}
+.global-header-ul-li {
+    border-radius: 4px;
+    background-color: rgba(4, 69, 175, 0.1);
+    box-shadow: rgba(4, 69, 175, 0.6) 0px 0px 0px 1px inset;
+    color: rgb(4, 69, 175);
+    padding: 0 8px;
+    cursor: pointer;
+    margin-bottom: 8px;
+    width: 175px;
+    height: 40px;
+    transition: all 0.1s ease-in-out;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.global-header-ul-li-required .global-header-ul-li-span-qN,
+.global-header-ul-li-required .global-header-ul-li-span-key {
+    background-color: rgb(4, 69, 175);
+    color: #FFF;
+}
+.global-header-ul-li-required {
+    border: 1px solid rgb(4, 69, 175);
+} 
+.global-header-ul-li-required .global-header-ul-li-span-check {
+    display: block;
+    
+}
+.global-header-ul-li:hover {
+    background-color: rgba(4, 69, 175, 0.3);
+}
+.global-header-ul-li:last-child { margin-bottom: 0; }
+
+.global-header-ul-li-span-key {
+    position: absolute;
+    font-size: 12px;
+    left: -25px;
+    background-color: #FFF;
+    border: 1px solid rgb(4, 69, 175);
+    border-right: 1px solid transparent;
+    padding: 3px 6px;
+    font-weight: bold;
+    display: none;
+}
+
+.global-header-ul-li-span-qN {
+    padding: 0 6px;
+    background-color: #FFF;
+    font-weight: bold;
+    border: 1px solid rgb(4, 69, 175);
+}
+
+
+.global-header-ul-li-span-qC {
+    padding-left: 8px;
+    font-size: 20px;
+}
+
+.global-header-ul-li-span-check {
+    position: absolute;
+    right: 12px;
+    display: none;
+}
+
+.global-header-ul-li-span-check  svg {
+    display: block;
+    fill: rgb(4, 69, 175);
+    transition: fill 0.2s ease 0s;
+}
+
+#start:hover {
+    opacity: 0.8;
+}
