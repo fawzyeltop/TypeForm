@@ -1,7 +1,25 @@
 html, body {
     height: 100%;
     width: 100%;
+    overflow-y: hidden;
 }
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color:rgb(4, 69, 175);
+    opacity: 0.5; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: red;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: red;
+  }
+
+  .d-noneN {
+      display: none !important;
+  }
 
 #hi-there {
     display: flex;
@@ -10,14 +28,14 @@ html, body {
     justify-content: center;
 }
 
-#start {
+.global-button {
     position: relative;
     font-weight: 700;
     cursor: pointer;
     outline: none;
     border: 1px solid transparent;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 12px 0px;
-    padding: 8px 18px;
+    padding: 6px 18px;
     min-height: 48px;
     background-color: rgb(4, 69, 175);
     color: rgb(255, 255, 255);
@@ -26,6 +44,16 @@ html, body {
     line-height: 32px;
     transition: all 0.3s ease-in-out;
 }
+
+.global-button:hover {
+    opacity: 0.8;
+}
+
+.global-button svg {
+    fill: rgb(253, 253, 253);
+    transition: fill 0.2s ease 0s;
+}
+
 
 .global-header {
     display: flex;
@@ -62,6 +90,45 @@ html, body {
     display: flex;
     align-items: center;
     position: relative;
+}
+.global-header-ul-li-phone {
+    width: 450px;
+}
+.global-header-ul-li-txt {
+    width: 750px;
+}
+.global-header-ul-li-para {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgb(4, 69, 175);
+}
+
+.global-header-ul-li-input {
+    border: none;
+    border-bottom: 1px solid rgb(4, 69, 175);
+    font-size: 30px;
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 10px;
+    outline: none;
+    transition: all 0.1s ease-in-out;
+}
+.global-header-ul-li-txtArea {
+    resize: none;
+    height: 50px;
+    min-height: 50px;
+    width: 100%;
+    font-size: 30px;
+    display: inline-block;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgb(4, 69, 175);
+    color: rgb(4, 69, 175);
+}
+.changeInputClass {
+    border-bottom: 2px solid rgb(9, 79, 192);
+    color: rgb(4, 69, 175);;
 }
 .global-header-ul-li-required .global-header-ul-li-span-qN,
 .global-header-ul-li-required .global-header-ul-li-span-key {
@@ -117,6 +184,4 @@ html, body {
     transition: fill 0.2s ease 0s;
 }
 
-#start:hover {
-    opacity: 0.8;
-}
+
