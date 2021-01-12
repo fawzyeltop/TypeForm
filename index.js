@@ -18,9 +18,10 @@ $(() => {
        
          // Ok Button
          $(".ok").click((e) => {
-            const ele = e.target.parentElement.parentElement.parentElement.parentElement.parentElement;
-            $(ele).addClass("d-noneN");
-            $(ele).next().addClass("d-block animate__animated animate__slideInUp");
+            // const ele = e.target.parentElement.parentElement.parentElement.parentElement;
+            // const ele = $(".d-block");
+            $(".d-block").addClass("d-noneN");
+            $(".d-block").next().addClass("d-block animate__animated animate__slideInUp");
             if(!$(e.target).hasClass("noCounter")) {
                 counter++;
                 $("#changeNum").text(`${ counter }`);
