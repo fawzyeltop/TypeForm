@@ -92,10 +92,10 @@ html, body {
     position: relative;
 }
 .global-header-ul-li-phone {
-    width: 70%;
+    width: 100%;
 }
 .global-header-ul-li-txt {
-    width: 75%;
+    width: 100%;
 }
 .global-header-ul-li-para {
     font-weight: 400;
@@ -158,6 +158,7 @@ html, body {
     padding: 3px 6px;
     font-weight: bold;
     display: none;
+    pointer-events: none;
 }
 
 .global-header-ul-li-span-qN {
@@ -165,12 +166,14 @@ html, body {
     background-color: #FFF;
     font-weight: bold;
     border: 1px solid rgb(4, 69, 175);
+    pointer-events: none;
 }
 
 
 .global-header-ul-li-span-qC {
     padding-left: 8px;
     font-size: 20px;
+    pointer-events: none;
 }
 
 .global-header-ul-li-span-check {
@@ -251,6 +254,7 @@ html, body {
     height: 15px;
     width: 250px;
 }
+
 
 
 

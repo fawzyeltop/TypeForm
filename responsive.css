@@ -1,0 +1,35 @@
+@media (max-width: 575.98px) { 
+    h3 {
+        font-size: 1.3rem;
+    }
+    .global-header-ul-li-input,
+    .global-header-ul-li-txtArea, 
+    .iti input[type=tel]  {
+        font-size: 20px;
+    }
+    .global-button {
+        padding: 2px 8px;
+        min-height: 0;
+        font-size: 15px;
+    }
+    .footer-pw {
+        justify-content: center;
+        -webkit-box-pack: center;
+        height: auto;
+    }
+    .footer-pw-content {
+        flex-flow: column;
+        align-items:initial;
+    }
+    .twoCont, .btn-group {
+        margin-right: 0 !important;
+        margin-bottom: 8px;
+    }
+    .forImage img {
+        height: 80px !important;
+        width: 80px !important;
+    }
+    .end-content p {
+        font-size: 16px;
+    }
+ }
