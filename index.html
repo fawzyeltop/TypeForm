@@ -12,6 +12,7 @@
      <!-- Links -->
     <link rel="icon" type="image/png" href="Images/Capture.PNG"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="assets/css/intlTelInput.css"/>
     <link rel="stylesheet" href="index.css"/>
@@ -20,7 +21,28 @@
 <body>
 
     <!-- Content -->
-    <div class="app container-fluid h-100 w-100 d-flex justify-content-center align-items-center" id="app">
+    <div class="app container-fluid h-100 w-100 d-flex justify-content-center align-items-center position-relative" id="app">
+        <div class="bottomContent footer-create d-none">
+            <div class="footer-create-content d-flex align-items-center">
+                <span class="footer-create-content-span mr-2">How you ask is everything</span>
+                <button type="button" class="footer-create-content-btn create mr-3">Create a typeform</button>
+            </div>
+        </div>
+        <div class="bottomContent footer-pw d-none">
+            <div class="footer-pw-content d-flex align-items-center">
+                <div class="twoCont mr-2">
+                   <p class="mb-0 text-muted" style="font-size: 12px"><span id="changeNum">0</span> of 5 answered</p>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" id="progress" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div class="btn-group mr-3" role="group" aria-label="Second group">
+                    <button type="button" class="btn btn-primary create spb">Powered by <strong>Typeform</strong></button>
+                    <!-- <button type="button" class="btn btn-primary spb" id="goUp"><svg height="9" width="14"><path d="M11.996 8.121l1.414-1.414L6.705 0 0 6.707l1.414 1.414 5.291-5.293z"></path></svg></button>
+                    <button type="button" class="btn btn-primary spb" id="goDown"><svg height="9" width="14"><path d="M12.293.293l1.414 1.414L7 8.414.293 1.707 1.707.293 7 5.586z"></path></svg></button> -->
+                </div>
+            </div>
+        </div>
         <div class="container">
             <!-- Row for first content -->
                 <div class="row">
@@ -72,7 +94,7 @@
                                <li class="global-header-ul-li-special d-none">
                                 <div class="press-enter d-flex align-items-center mt-3">
                                     <div class="specialBtn-purpose">
-                                        <button type="button" class="global-button" id="1-Ok">OK <svg height="13" width="16"><path d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"></path></svg></button>
+                                        <button type="button" class="global-button ok noCounter" id="1-Ok">OK <svg height="13" width="16"><path d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"></path></svg></button>
                                     </div>
                                     <div class="press-enter-text pl-2" id="press-enter-text">
                                       <span class="word">press</span>
@@ -96,7 +118,7 @@
                                 <li class="global-header-ul-li-special">
                                     <div class="press-enter d-flex align-items-center mt-3">
                                         <div class="specialBtn-purpose">
-                                            <button type="button" class="global-button" id="phoneOK">OK <svg height="13" width="16"><path d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"></path></svg></button>
+                                            <button type="button" class="global-button ok" id="phoneOK">OK <svg height="13" width="16"><path d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"></path></svg></button>
                                         </div>
                                         <div class="press-enter-text pl-2" id="press-enter-text">
                                         <span class="word">press</span>
@@ -119,7 +141,7 @@
                                 <li class="global-header-ul-li-special d-none">
                                     <div class="press-enter d-flex align-items-center mt-3">
                                         <div class="specialBtn-purpose">
-                                            <button type="button" class="global-button specialOK" id="3-Ok">OK <svg height="13" width="16"><path d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"></path></svg></button>
+                                            <button type="button" class="global-button ok" id="3-Ok">OK <svg height="13" width="16"><path d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"></path></svg></button>
                                         </div>
                                         <div class="press-enter-text pl-2" id="press-enter-text">
                                         <span class="word">press</span>
@@ -145,7 +167,7 @@
                                 <li class="global-header-ul-li-special d-none">
                                     <div class="press-enter d-flex align-items-center mt-3">
                                         <div class="specialBtn-purpose">
-                                            <button type="button" class="global-button specialOK" id="longTxtOK">OK <svg height="13" width="16"><path d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"></path></svg></button>
+                                            <button type="button" class="global-button ok" id="longTxtOK">OK <svg height="13" width="16"><path d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"></path></svg></button>
                                         </div>
                                         <div class="press-enter-text pl-2" id="press-enter-text">
                                         <span class="word">press</span>
@@ -163,7 +185,7 @@
                                 <li class="global-header-ul-li-special">
                                     <div class="press-enter d-flex align-items-center mt-3">
                                         <div class="specialBtn-purpose">
-                                            <button type="button" class="global-button continue" id="continue">Continue 
+                                            <button type="button" class="global-button noCounter ok" id="continue">Continue 
                                         </div>
                                         <div class="press-enter-text pl-2" id="press-enter-text">
                                         <span class="word">press</span>
@@ -173,6 +195,58 @@
                                 </li>
                            </ul>
                         </section>
+                        <section class="yesNo d-none" id="yesNo">
+                            <div class="global-header d-flex align-items-center">
+                                 <span class="global-header-span">
+                                     5 <svg height="10" width="11"><path d="M7.586 5L4.293 1.707 5.707.293 10.414 5 5.707 9.707 4.293 8.293z"></path><path d="M8 4v2H0V4z"></path></svg></span>
+                                 <h3 class="mb-0 global-header-para pl-2" id="global-header-para">Yes or No</h3>
+                            </div>
+                            <ul class="global-header-ul">
+                                <li class="global-header-ul-li">
+                                    <span class="global-header-ul-li-span-key">Key</span>
+                                    <span class="global-header-ul-li-span-qN">Y</span>
+                                    <span class="global-header-ul-li-span-qC">Yes</span>
+                                    <span class="global-header-ul-li-span-check"><svg height="13" width="16"><path d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"></path></svg></span>
+                                </li>
+                                <li class="global-header-ul-li">
+                                     <span class="global-header-ul-li-span-key">Key</span>
+                                     <span class="global-header-ul-li-span-qN">N</span>
+                                     <span class="global-header-ul-li-span-qC">No</span>
+                                     <span class="global-header-ul-li-span-check"><svg height="13" width="16"><path d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"></path></svg></span>
+                                </li>
+                                <li class="global-header-ul-li-special d-none">
+                                    <div class="press-enter d-flex align-items-center mt-3">
+                                        <div class="specialBtn-purpose">
+                                            <button type="button" class="global-button" id="submit">Submit</button>
+                                        </div>
+                                        <div class="press-enter-text pl-2" id="press-enter-text">
+                                        <span class="word">press</span>
+                                        <strong>Enter ↵</strong>
+                                        </div>
+                                    </div>
+                                    <p class="mb-0 mt-1">Never submit passwords! - <a href="#">Report abuse</a></p>
+                                </li>
+                           </ul>  
+                           
+                        </section>
+                        <section class="end d-none flex-column justify-content-center align-items-center" id="end">
+                            <div class="forImage mb-4">
+                                <img src="assets/img/default.gif" style="height: 120px; width: 120px"/>
+                            </div>
+                            <div class="end-content text-center" id="end-content">
+                                <p class="mb-1">Thanks for completing this typeform</p>
+                                <p class="mb-0">Now <strong>create your own</strong> — it's free, easy, & beautiful</p>
+                            </div>
+                            <div class="press-enter d-flex align-items-center mt-3">
+                                <div class="specialBtn-purpose" id="start-purpose">
+                                  <button type="button" class="global-button create" id="create">Create a typeform</button>
+                                </div>
+                                <div class="press-enter-text pl-2" id="press-enter-text">
+                                  <span class="word">press</span>
+                                  <strong>Enter ↵</strong>
+                                </div>
+                            </div>
+                          </section>
                     </div>
                 </div>
             <!-- Row for first content -->

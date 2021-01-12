@@ -45,7 +45,7 @@ html, body {
     transition: all 0.3s ease-in-out;
 }
 
-.global-button:hover {
+.global-button:hover, .footer-create .footer-create-content-btn:hover {
     opacity: 0.8;
 }
 
@@ -92,10 +92,10 @@ html, body {
     position: relative;
 }
 .global-header-ul-li-phone {
-    width: 450px;
+    width: 70%;
 }
 .global-header-ul-li-txt {
-    width: 750px;
+    width: 75%;
 }
 .global-header-ul-li-para {
     font-weight: 400;
@@ -106,6 +106,7 @@ html, body {
 
 .global-header-ul-li-input {
     border: none;
+    color: rgb(4, 69, 175);
     border-bottom: 1px solid rgb(4, 69, 175);
     font-size: 30px;
     display: inline-block;
@@ -183,5 +184,75 @@ html, body {
     fill: rgb(4, 69, 175);
     transition: fill 0.2s ease 0s;
 }
+
+.end-content p {
+    font-size: 22px;
+}
+
+.bottomContent {
+    position: absolute;
+    left: 0px;
+    right: 0;
+    bottom: 0px;
+    z-index: 10;
+    height: 48px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    -webkit-box-pack: end;
+    align-items: center;
+    -webkit-box-align: center;
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px -1px;
+    color:rgb(4, 69, 175);
+}
+
+.footer-pw {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    height: 60px;
+}
+
+.footer-create .footer-create-content-btn {
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid transparent;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 12px 0px;
+    background-color: rgb(4, 69, 175);
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+.spb {
+    background-color: rgb(4, 69, 175);
+}
+
+.spb svg {
+    display: block;
+    fill: rgb(255, 255, 255);
+    transition: fill 0.2s ease 0s;
+}
+
+.spb:disabled {
+    background-color: rgb(4, 69, 175);
+}
+
+.spb:disabled svg {
+    display: block;
+    fill: rgb(192, 192, 192);
+    transition: fill 0.2s ease 0s;
+}
+
+.progress {
+    height: 15px;
+    width: 250px;
+}
+
+
+
 
 
