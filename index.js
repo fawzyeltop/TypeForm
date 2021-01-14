@@ -6,41 +6,68 @@ $(() => {
     }
 
     const initJSDOM = () => {
-        var counter = 1;
+        var counter = 0;
 
-         // Ok Button
-         $(".ok").click((e) => {
-            $(".d-block").addClass("d-noneN");
-            $(".d-block").next().addClass("d-block animate__animated animate__slideInUp");
-            $(".footer-pw").addClass('d-flex animate__animated animate__fadeIn');
-            if(!$(e.target).hasClass("noCounter")) {
-                counter++;
-                $("#changeNum").text(`${ counter }`);
-                $("#progress").attr('style', `width: ${ counter * 20 }%`);
+        const counterFunc = () => {
+            counter++;
+            $("#changeNum").text(`${ counter }`);
+            $("#progress").attr('style', `width: ${ counter * 20 }%`);
+        }
+   
+            
+
+         $(".ok").click(() => {
+            if($("body").find('.enter').hasClass("startSection")) {
+                $(".footer-pw").addClass('d-flex animate__animated animate__fadeIn');
             }
+            if($("body").find('.enter').hasClass("yesNo")) {
+                $(".footer-pw").addClass('animate__animated animate__fadeOut');
+                $(".footer-create").addClass('d-flex animate__animated animate__fadeIn');
+           }
+           if($("body").find('.enter').hasClass("la") || $("body").find('.enter').hasClass("yesNo")) {
+             if($("body").find('.enter').find(".global-header-ul-li-required")) {
+                counterFunc();
+             } 
+            }
+          
+           if($("body").find('.enter').hasClass("submit")) return visitURL();
+            if($("body").find('.enter').hasClass("phoneSection")) {
+                if($("body").find('.enter').find('#phone').val().length > 0) counterFunc();
+            }
+            if($("body").find('.enter').hasClass("shortText")) {
+                if($("body").find('.enter').find('#short').val().length > 0)  counterFunc();
+            }
+            if($("body").find('.enter').hasClass("longText")) {
+                if($("body").find('.enter').find('#long').val().length > 0)  counterFunc();
+            }
+            $("body").find('.enter').next().addClass("enter d-block animate__animated animate__slideInUp");
+            $("body").find('.enter').first().removeClass("enter").addClass("d-noneN");
+           
         });
 
-        // Submit Button
-        const submit = $("#submit");
-        submit.click((e) => {
-            const ele = e.target.parentElement.parentElement.parentElement.parentElement.parentElement;
-            $(ele).addClass("d-noneN");
-            $(ele).next().addClass("d-flex animate__animated animate__slideInUp");
-            $(".footer-pw").addClass('animate__animated animate__fadeOut');
-            $(".footer-create").addClass('d-flex animate__animated animate__fadeIn');
-        });
-
-        // goUp & goDown
-        const goUp = $("#goUp"), goDown = $("#goDown");
-        goDown.click(() => {
-            const ele = $(".d-block");
-            $(ele).addClass("d-noneN");
-            $(ele).next().addClass("d-block animate__animated animate__slideInUp");
-        });
-        goUp.click(() => {
-            const ele = $(".d-block");
-            $(ele).addClass("d-noneN");
-            $(ele).prev().addClass("d-blockN animate__animated animate__slideInUp");
+        $('body').on("keyup", (e) => {
+            if (e.keyCode == 13) {
+                if($("body").find('.enter').hasClass("startSection")) {
+                    $(".footer-pw").addClass('d-flex animate__animated animate__fadeIn');
+                }
+                if($("body").find('.enter').hasClass("phoneSection")) {
+                    if($("body").find('.enter').find('#phone').val().length > 0) counterFunc();
+                }
+                if($("body").find('.enter').hasClass("shortText")) {
+                    if($("body").find('.enter').find('#short').val().length > 0)  counterFunc();
+                }
+                if($("body").find('.enter').hasClass("longText")) {
+                    if($("body").find('.enter').find('#long').val().length > 0)  counterFunc();
+                }
+               if($("body").find('.enter').hasClass("submit")) return visitURL();
+               if($("body").find('.enter').hasClass("yesNo")) {
+                    $(".footer-pw").addClass('animate__animated animate__fadeOut');
+                    $(".footer-create").addClass('d-flex animate__animated animate__fadeIn');
+               }
+               $("body").find('.enter').next().addClass("enter d-block animate__animated animate__slideInUp");
+               $("body").find('.enter').first().removeClass("enter").addClass("d-noneN");
+             
+            }
         });
 
         // goTo URL method
@@ -52,8 +79,6 @@ $(() => {
             visitURL();
         })
 
-       
-
         const globalHeaderUlLi = $(".global-header-ul-li");
         globalHeaderUlLi.mouseover((e) => {
             $(e.target).find(".global-header-ul-li-span-key").addClass("d-block");
@@ -62,14 +87,9 @@ $(() => {
             $(e.target).find(".global-header-ul-li-span-key").removeClass("d-block");
         })
         globalHeaderUlLi.click((e) => {
-            if($(e.target.parentElement.parentElement).hasClass("yesNo")) counter++;
-            counter--;
             globalHeaderUlLi.removeClass("animate__animated animate__bounceIn global-header-ul-li-required");
             $(e.target).addClass("animate__animated animate__bounceIn global-header-ul-li-required");
             $(e.target.parentElement).children().last().addClass("d-block");
-            counter++;
-            $("#changeNum").text(`${ counter }`);
-            $("#progress").attr('style', `width: ${ counter * 20 }%`);
         });
         // $(".global-header-ul-li-input").click((e) => {
         //     $(e.target).addClass("changeInputClass");
@@ -81,23 +101,7 @@ $(() => {
             $(e.target.parentElement.parentElement).children().last().addClass("d-block");
         })
 
-        $('body').on("keyup", function(e) {
-            if (e.keyCode == 13) {
-                if($(".d-block").hasClass("start")) {
-                    $(".footer-pw").addClass('d-flex animate__animated animate__fadeIn');
-                }
-                if($(".d-block").hasClass("yesNo")) {
-                    $(".footer-pw").addClass('animate__animated animate__fadeOut');
-                    $(".footer-create").addClass('d-flex animate__animated animate__fadeIn');
-                }
-                if($(".d-block").hasClass("submit")) {
-                   return visitURL();
-                }
-                $(".d-block").addClass("d-noneN");
-                $(".d-block").next().addClass("d-block animate__animated animate__slideInUp");
-              
-            }
-        });
+      
     }
     const initPhone = () => {
         var input = document.querySelector("#phone");

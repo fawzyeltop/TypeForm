@@ -46,12 +46,12 @@
             <!-- Row for first content -->
                 <div class="row">
                     <div class="col-12">
-                        <section class="h-there start d-block d-flex" id="hi-there">
+                        <section class="startSection enter" id="hi-there">
                           <h3>Hi There</h3>
                           <span class="text-muted">1 min to complete</span>
                           <div class="press-enter d-flex align-items-center mt-3">
                               <div class="specialBtn-purpose" id="start-purpose">
-                                <button type="button" class="global-button ok noCounter" id="start">Start</button>
+                                <button type="button" class="global-button ok">Start</button>
                               </div>
                               <div class="press-enter-text pl-2" id="press-enter-text">
                                 <span class="word">press</span>
@@ -59,7 +59,7 @@
                               </div>
                           </div>
                         </section>
-                        <section class="la d-none" id="la">
+                        <section class="la noCounter d-none" id="la">
                            <div class="global-header d-flex align-items-center" id="global-header">
                                 <span class="global-header-span" id="global-header-span">
                                     1 <svg height="10" width="11"><path d="M7.586 5L4.293 1.707 5.707.293 10.414 5 5.707 9.707 4.293 8.293z"></path><path d="M8 4v2H0V4z"></path></svg></span>
@@ -93,7 +93,7 @@
                                <li class="global-header-ul-li-special d-none">
                                 <div class="press-enter d-flex align-items-center mt-3">
                                     <div class="specialBtn-purpose">
-                                        <button type="button" class="global-button ok noCounter" id="1-Ok">OK <svg height="13" width="16"><path d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"></path></svg></button>
+                                        <button type="button" class="global-button ok" id="1-Ok">OK <svg height="13" width="16"><path d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"></path></svg></button>
                                     </div>
                                     <div class="press-enter-text pl-2" id="press-enter-text">
                                       <span class="word">press</span>
@@ -104,7 +104,7 @@
                           </ul>  
                           
                         </section>
-                        <section class="phone-section d-none" id="phone-section">
+                        <section class="phoneSection noCounter d-none" id="phone-section">
                             <div class="global-header d-flex align-items-center">
                                 <span class="global-header-span">
                                     2 <svg height="10" width="11"><path d="M7.586 5L4.293 1.707 5.707.293 10.414 5 5.707 9.707 4.293 8.293z"></path><path d="M8 4v2H0V4z"></path></svg></span>
@@ -127,7 +127,7 @@
                                 </li>
                            </ul>
                         </section>
-                        <section class="shortText-section d-none" id="shortText-section">
+                        <section class="shortText d-none" id="shortText-section">
                             <div class="global-header d-flex align-items-center">
                                 <span class="global-header-span">
                                     3 <svg height="10" width="11"><path d="M7.586 5L4.293 1.707 5.707.293 10.414 5 5.707 9.707 4.293 8.293z"></path><path d="M8 4v2H0V4z"></path></svg></span>
@@ -135,7 +135,7 @@
                            </div>
                            <ul class="global-header-ul mt-3">
                                 <li class="global-header-ul-li-txt">
-                                    <input class="global-header-ul-li-input" type="text" placeholder="Type your answer here..."/>
+                                    <input class="global-header-ul-li-input" type="text" placeholder="Type your answer here..." id="short"/>
                                 </li>
                                 <li class="global-header-ul-li-special d-none">
                                     <div class="press-enter d-flex align-items-center mt-3">
@@ -150,7 +150,7 @@
                                 </li>
                            </ul>
                         </section>
-                        <section class="longText-section d-none" id="longText-section">
+                        <section class="longText d-none" id="longText-section">
                             <div class="global-header d-flex align-items-center">
                                 <span class="global-header-span">
                                     4 <svg height="10" width="11"><path d="M7.586 5L4.293 1.707 5.707.293 10.414 5 5.707 9.707 4.293 8.293z"></path><path d="M8 4v2H0V4z"></path></svg></span>
@@ -158,7 +158,7 @@
                            </div>
                            <ul class="global-header-ul mt-3">
                                 <li class="global-header-ul-li-txt">
-                                    <textarea class="global-header-ul-li-txtArea" type="text" placeholder="Type your answer here..."></textarea>
+                                    <textarea class="global-header-ul-li-txtArea" type="text" placeholder="Type your answer here..." id="long"></textarea>
                                 </li>
                                 <li class="global-header-ul-li-txt mt-1">
                                     <p class="mb-0 global-header-ul-li-para"><strong>Shift ⇧</strong> + <strong>Enter ↵</strong> to make a line break</p>
@@ -176,7 +176,7 @@
                                 </li>
                            </ul>
                         </section>
-                        <section class="Statement d-none" id="Statement">
+                        <section class="Statement noCounter d-none" id="Statement">
                            <ul class="global-header-ul mt-3">
                                 <li class="global-header-ul-li-txt mt-1">
                                     <h4 class="mb-0"><strong style="color: rgb(4, 69, 175)">" </strong>Statement</h4>
@@ -216,7 +216,7 @@
                                 <li class="global-header-ul-li-special d-none">
                                     <div class="press-enter d-flex align-items-center mt-3">
                                         <div class="specialBtn-purpose">
-                                            <button type="button" class="global-button" id="submit">Submit</button>
+                                            <button type="button" class="global-button ok">Submit</button>
                                         </div>
                                         <div class="press-enter-text pl-2" id="press-enter-text">
                                         <span class="word">press</span>
@@ -228,7 +228,7 @@
                            </ul>  
                            
                         </section>
-                        <section class="submit d-none">
+                        <section class="submit  d-none">
                             <div class="forImage mb-4 text-center">
                                 <img src="assets/img/default.gif" style="height: 120px; width: 120px"/>
                             </div>
