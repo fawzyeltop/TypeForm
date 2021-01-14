@@ -21,13 +21,6 @@ html, body {
       display: none !important;
   }
 
-#hi-there {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-}
-
 .global-button {
     position: relative;
     font-weight: 700;

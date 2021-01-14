@@ -25,10 +25,10 @@ $(() => {
                 $(".footer-create").addClass('d-flex animate__animated animate__fadeIn');
            }
            if($("body").find('.enter').hasClass("la") || $("body").find('.enter').hasClass("yesNo")) {
-             if($("body").find('.enter').find(".global-header-ul-li-required")) {
+            if($("body").find('.enter').find(".global-header-ul-li-required").length > 0) {
                 counterFunc();
-             } 
-            }
+            } 
+        }
           
            if($("body").find('.enter').hasClass("submit")) return visitURL();
             if($("body").find('.enter').hasClass("phoneSection")) {
@@ -47,8 +47,14 @@ $(() => {
 
         $('body').on("keyup", (e) => {
             if (e.keyCode == 13) {
+                
                 if($("body").find('.enter').hasClass("startSection")) {
                     $(".footer-pw").addClass('d-flex animate__animated animate__fadeIn');
+                }
+                if($("body").find('.enter').hasClass("la") || $("body").find('.enter').hasClass("yesNo")) {
+                    if($("body").find('.enter').find(".global-header-ul-li-required").length > 0) {
+                        counterFunc();
+                    } 
                 }
                 if($("body").find('.enter').hasClass("phoneSection")) {
                     if($("body").find('.enter').find('#phone').val().length > 0) counterFunc();
