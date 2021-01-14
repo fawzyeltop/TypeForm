@@ -7,21 +7,12 @@ $(() => {
 
     const initJSDOM = () => {
         var counter = 1;
-        // Start Button
-        const start = $("#start");
-        start.click((e) => {
-            const ele = e.target.parentElement.parentElement.parentElement;
-            $(ele).addClass("d-noneN");
-            $(ele).next().addClass("d-block animate__animated animate__slideInUp");
-            $(".footer-pw").addClass('d-flex animate__animated animate__fadeIn');
-        });
-       
+
          // Ok Button
          $(".ok").click((e) => {
-            // const ele = e.target.parentElement.parentElement.parentElement.parentElement;
-            // const ele = $(".d-block");
             $(".d-block").addClass("d-noneN");
             $(".d-block").next().addClass("d-block animate__animated animate__slideInUp");
+            $(".footer-pw").addClass('d-flex animate__animated animate__fadeIn');
             if(!$(e.target).hasClass("noCounter")) {
                 counter++;
                 $("#changeNum").text(`${ counter }`);
@@ -89,6 +80,24 @@ $(() => {
         $(".global-header-ul-li-txtArea").keyup((e) => {
             $(e.target.parentElement.parentElement).children().last().addClass("d-block");
         })
+
+        $('body').on("keyup", function(e) {
+            if (e.keyCode == 13) {
+                if($(".d-block").hasClass("start")) {
+                    $(".footer-pw").addClass('d-flex animate__animated animate__fadeIn');
+                }
+                if($(".d-block").hasClass("yesNo")) {
+                    $(".footer-pw").addClass('animate__animated animate__fadeOut');
+                    $(".footer-create").addClass('d-flex animate__animated animate__fadeIn');
+                }
+                if($(".d-block").hasClass("submit")) {
+                   return visitURL();
+                }
+                $(".d-block").addClass("d-noneN");
+                $(".d-block").next().addClass("d-block animate__animated animate__slideInUp");
+              
+            }
+        });
     }
     const initPhone = () => {
         var input = document.querySelector("#phone");

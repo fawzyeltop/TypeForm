@@ -12,7 +12,6 @@
      <!-- Links -->
     <link rel="icon" type="image/png" href="Images/Capture.PNG"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="assets/css/intlTelInput.css"/>
     <link rel="stylesheet" href="index.css"/>
@@ -47,12 +46,12 @@
             <!-- Row for first content -->
                 <div class="row">
                     <div class="col-12">
-                        <section class="h-there" id="hi-there">
+                        <section class="h-there start d-block d-flex" id="hi-there">
                           <h3>Hi There</h3>
                           <span class="text-muted">1 min to complete</span>
                           <div class="press-enter d-flex align-items-center mt-3">
                               <div class="specialBtn-purpose" id="start-purpose">
-                                <button type="button" class="global-button" id="start">Start</button>
+                                <button type="button" class="global-button ok noCounter" id="start">Start</button>
                               </div>
                               <div class="press-enter-text pl-2" id="press-enter-text">
                                 <span class="word">press</span>
@@ -229,15 +228,15 @@
                            </ul>  
                            
                         </section>
-                        <section class="end d-none flex-column justify-content-center align-items-center" id="end">
-                            <div class="forImage mb-4">
+                        <section class="submit d-none">
+                            <div class="forImage mb-4 text-center">
                                 <img src="assets/img/default.gif" style="height: 120px; width: 120px"/>
                             </div>
                             <div class="end-content text-center" id="end-content">
                                 <p class="mb-1">Thanks for completing this typeform</p>
                                 <p class="mb-0">Now <strong>create your own</strong> — it's free, easy, & beautiful</p>
                             </div>
-                            <div class="press-enter d-flex align-items-center mt-3">
+                            <div class="press-enter d-flex align-items-center justify-content-center mt-3">
                                 <div class="specialBtn-purpose" id="start-purpose">
                                   <button type="button" class="global-button create" id="create">Create a typeform</button>
                                 </div>
