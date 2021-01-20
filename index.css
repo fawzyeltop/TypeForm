@@ -97,7 +97,7 @@ html, body {
     color: rgb(4, 69, 175);
 }
 
-.global-header-ul-li-input {
+.global-header-ul-li-input, .global-header-ul-li-email, .global-header-ul-li-url, .global-header-ul-li-number {
     border: none;
     color: rgb(4, 69, 175);
     border-bottom: 1px solid rgb(4, 69, 175);
@@ -173,6 +173,7 @@ html, body {
     position: absolute;
     right: 12px;
     display: none;
+    pointer-events: none;
 }
 
 .global-header-ul-li-span-check  svg {
@@ -247,6 +248,81 @@ html, body {
     height: 15px;
     width: 250px;
 }
+
+/*
+    - Picture Choice
+*/
+.div-pic {
+    border-radius: 4px;
+    background-color: rgba(4, 69, 175, 0.1);
+    box-shadow: rgba(4, 69, 175, 0.6) 0px 0px 0px 1px inset;
+    color: rgb(4, 69, 175);
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    position: relative;
+    
+}
+.div-pic:hover {
+    background-color: rgba(4, 69, 175, 0.3);
+}
+.div-pic:hover .div-pic-bottom .global-header-ul-li-span-key {
+    display: block;
+}
+.div-pic-bottom {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.div-pic-bottom .global-header-ul-li-span-key {
+    left: -34px;
+}
+
+/*
+    - Picture Choice
+*/
+
+
+/*
+    - Opinion Scale
+*/
+.opinion-scale {
+    width: 100%;
+    height: 64px;
+    background-color: rgba(31, 127, 255, 0.1);
+    color: rgb(31, 127, 255);
+    border: 1px solid rgb(31, 127, 255);
+    border-radius: 3px;
+    display: flex;
+    flex-direction: row;
+}
+.opinion-scale-span {
+    height: 100%;
+    flex: 1 1 0%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    outline: none;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    transition: all 0.1s ease-out 0s;
+    box-shadow: rgb(31, 127, 255) -1px 0px;
+    font-size: 20px;
+}
+.opinion-sacle-span:hover {
+    background-color: rgba(4, 69, 175, 0.2);
+}
+.opinion-sacle-span-required {
+    background-color: rgb(31, 127, 255);
+    color: #FFF;
+}
+/*
+    - Opinion Scale
+*/
+
 
 
 
