@@ -144,21 +144,9 @@ $(() => {
             $(e.target).addClass("animate__animated animate__bounceIn global-header-ul-li-required");
             $(e.target.parentElement).children().last().addClass("d-block");
         });
-        $(".global-header-ul-li-input").keyup((e) => {
+        $(".elementShowOk").keyup((e) => {
             $(e.target.parentElement.parentElement).children().last().addClass("d-block");
-        })
-        $(".global-header-ul-li-email").keyup((e) => {
-            $(e.target.parentElement.parentElement).children().last().addClass("d-block");
-        })
-        $(".global-header-ul-li-url").keyup((e) => {
-            $(e.target.parentElement.parentElement).children().last().addClass("d-block");
-        })
-        $(".global-header-ul-li-txtArea").keyup((e) => {
-            $(e.target.parentElement.parentElement).children().last().addClass("d-block");
-        })
-        $(".global-header-ul-li-number").keyup((e) => {
-            $(e.target.parentElement.parentElement).children().last().addClass("d-block");
-        })
+        })  
         $("#day, #month, #year").keyup((e) => {
             $(e.target.parentElement.parentElement).next().addClass("d-block");
         })

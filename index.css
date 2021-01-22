@@ -50,23 +50,26 @@ html, body {
 
 .global-header {
     display: flex;
-    -webkit-box-align: center;
     align-items: center;
     font-size: 14px;
 }
 
-.global-header-span {
+.global-header-number {
     font-weight: bold;
     color: rgb(4, 69, 175);
 }
 
-.global-header-span svg {
+.global-header-number svg {
     fill: rgb(4, 69, 175);
     transition: fill 0.2s ease 0s;
 }
-
+.global-header-heading {
+    padding-left: 5px;
+    margin-bottom: 0;
+}
 .global-header-ul {
-    list-style-type: none;
+    padding-left: 0;
+    list-style: none;
     margin-top: 8px;
 }
 .global-header-ul-li {
@@ -84,9 +87,7 @@ html, body {
     align-items: center;
     position: relative;
 }
-.global-header-ul-li-phone, .global-header-ul-li-select, .global-header-ul-li-txt  {
-    width: 100%;
-}
+
 
 .global-header-ul-li-para {
     font-weight: 400;
@@ -94,8 +95,7 @@ html, body {
     line-height: 16px;
     color: rgb(4, 69, 175);
 }
-
-.global-header-ul-li-input, .global-header-ul-li-email, .global-header-ul-li-url, .global-header-ul-li-number {
+.styleInputGlobal {
     border: none;
     color: rgb(4, 69, 175);
     border-bottom: 1px solid rgb(4, 69, 175);
@@ -106,7 +106,17 @@ html, body {
     outline: none;
     transition: all 0.1s ease-in-out;
 }
-.global-header-ul-li-txtArea {
+
+.press-enter  {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+.press-enter-text {
+    padding-left: 8px;
+}
+
+.txtAreaStyle {
     resize: none;
     height: 50px;
     min-height: 50px;
@@ -117,6 +127,7 @@ html, body {
     outline: none;
     border-bottom: 1px solid rgb(4, 69, 175);
     color: rgb(4, 69, 175);
+    /* */
 }
 .changeInputClass {
     border-bottom: 2px solid rgb(9, 79, 192);
