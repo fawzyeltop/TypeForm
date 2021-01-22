@@ -29,6 +29,12 @@ $(() => {
                     counterFunc();
                 }
             }
+            if ($("body").find('.enter').hasClass("dateInput")) {
+                if ($("body").find('.enter').find('#day').val().trim().length === 2 && $("body").find('.enter').find('#month').val().trim().length === 2 && $("body").find('.enter').find('#year').val().trim().length === 4) counterFunc();
+            }
+            if ($("body").find('.enter').hasClass("selectBoxSection")) {
+                if ($("body").find('.enter').find('#selectOption').val() === "1" || $("body").find('.enter').find('#selectOption').val() === "2" || $("body").find('.enter').find('#selectOption').val() === "3") counterFunc();
+            }
             if ($("body").find('.enter').hasClass("opinionScale")) {
                 if ($("body").find('.enter').find(".opinion-sacle-span-required").length > 0) {
                     counterFunc();
@@ -71,6 +77,12 @@ $(() => {
                     if ($("body").find('.enter').find(".opinion-sacle-span-required").length > 0) {
                         counterFunc();
                     }
+                }
+                if ($("body").find('.enter').hasClass("dateInput")) {
+                    if ($("body").find('.enter').find('#day').val().trim().length === 2 && $("body").find('.enter').find('#month').val().trim().length === 2 && $("body").find('.enter').find('#year').val().trim().length === 4) counterFunc();
+                }
+                if ($("body").find('.enter').hasClass("selectBoxSection")) {
+                    if ($("body").find('.enter').find('#selectOption').val() === "1" || $("body").find('.enter').find('#selectOption').val() === "2" || $("body").find('.enter').find('#selectOption').val() === "3") counterFunc();
                 }
                 if ($("body").find('.enter').hasClass("phoneSection")) {
                     if ($("body").find('.enter').find('#phone').val().length > 0) counterFunc();
@@ -147,6 +159,9 @@ $(() => {
         $(".global-header-ul-li-number").keyup((e) => {
             $(e.target.parentElement.parentElement).children().last().addClass("d-block");
         })
+        $("#day, #month, #year").keyup((e) => {
+            $(e.target.parentElement.parentElement).next().addClass("d-block");
+        })
         $('.opinion-scale-span').click((e) => {
             $('.opinion-scale-span').removeClass("animate__animated animate__bounceIn opinion-sacle-span-required");
             $(e.target).addClass("animate__animated animate__bounceIn opinion-sacle-span-required");
@@ -194,11 +209,16 @@ $(() => {
         });
     }
 
+    const initSelect = () => {
+        $('#selectOption').niceSelect();
+    }
+
 
     const initGlobal = () => {
         toConsole();
         initJSDOM();
         initPhone();
+        initSelect();
     }
 
     initGlobal();

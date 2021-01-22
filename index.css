@@ -84,12 +84,10 @@ html, body {
     align-items: center;
     position: relative;
 }
-.global-header-ul-li-phone {
+.global-header-ul-li-phone, .global-header-ul-li-select, .global-header-ul-li-txt  {
     width: 100%;
 }
-.global-header-ul-li-txt {
-    width: 100%;
-}
+
 .global-header-ul-li-para {
     font-weight: 400;
     font-size: 12px;
@@ -165,7 +163,7 @@ html, body {
 
 .global-header-ul-li-span-qC {
     padding-left: 8px;
-    font-size: 20px;
+    font-size: 17px;
     pointer-events: none;
 }
 
@@ -269,10 +267,15 @@ html, body {
 .div-pic:hover .div-pic-bottom .global-header-ul-li-span-key {
     display: block;
 }
+.div-pic-image {
+    pointer-events: none;
+}
+
 .div-pic-bottom {
     position: relative;
     display: flex;
     align-items: center;
+    pointer-events: none;
 }
 .div-pic-bottom .global-header-ul-li-span-key {
     left: -34px;
@@ -321,6 +324,79 @@ html, body {
 }
 /*
     - Opinion Scale
+*/
+
+/*
+    - Date Section
+*/
+
+.date-input {
+    display: flex;
+    -webkit-box-align: baseline;
+    align-items: baseline;
+    width: fit-content;
+}
+
+.date-input .date-part {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.date-input .date-part .date-part-word {
+    margin-bottom: 8px;
+    max-width: 100%;
+    font-weight: unset;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(31, 127, 255);
+}
+
+.date-input .date-part .date-part-input {
+    display: block;
+    width: calc(2.2ch); 
+    color: rgb(4, 69, 175);
+    padding: 0px 0px 8px;
+    border: none;
+    outline: none;
+    border-radius: 0px;
+    transform: translateZ(0px);
+    font-size: 30px;
+    -webkit-font-smoothing: antialiased;
+    line-height: unset;
+    animation: 1ms ease 0s 1 normal none running native-autofill-in;
+    transition: background-color 1e+08s ease 0s, box-shadow 0.1s ease-out 0s;
+    box-shadow: rgba(31, 127, 255, 0.3) 0px 1px;
+    background-color: transparent !important;
+}
+
+.date-input .date-input-spacer {
+    margin-right: 16px;
+    margin-bottom: 8px;
+    margin-left: 20px;
+    align-self: flex-end;
+}
+
+
+.date-input .date-input-spacer span {
+    margin: 0px;
+    max-width: 100%;
+    font-weight: unset;
+    font-size: 30px;
+    line-height: 38px;
+    color: rgb(31, 127, 255);
+}
+
+/*
+    - Date Section
+*/
+
+/*
+    - SelectBox Section
+*/
+
+/*
+    - SelectBox Section
 */
 
 

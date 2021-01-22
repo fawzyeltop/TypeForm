@@ -16,6 +16,7 @@
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="assets/css/star-rating-svg.css" />
+    <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/intlTelInput.css" />
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="responsive.css" />
@@ -62,6 +63,47 @@
                             <div class="press-enter-text pl-2" id="press-enter-text">
                                 <span class="word">press</span>
                                 <strong>Enter ↵</strong>
+                            </div>
+                        </div>
+                    </section>
+                      <section class="dateInput d-none">
+                        <div class="global-header d-flex align-items-center">
+                            <span class="global-header-span">
+                                1 <svg height="10" width="11">
+                                    <path d="M7.586 5L4.293 1.707 5.707.293 10.414 5 5.707 9.707 4.293 8.293z"></path>
+                                    <path d="M8 4v2H0V4z"></path>
+                                </svg></span>
+                            <h3 class="mb-0 global-header-para pl-2">Date</h3>
+                        </div>
+                        <div class="date-input mt-3">
+                            <div class="date-part">
+                                <span class="date-part-word">Month</span>
+                                <input type="text" class="date-part-input" id="month" maxlength="2"/>
+                            </div>
+                            <div class="date-input-spacer"><span>/</span></div>
+                            <div class="date-part">
+                                <span class="date-part-word">Day</span>
+                                <input type="text" class="date-part-input" id="day" maxlength="2"/>
+                            </div>
+                            <div class="date-input-spacer"><span>/</span></div>
+                            <div class="date-part">
+                                <span class="date-part-word">Year</span>
+                                <input type="text" class="date-part-input" id="year" style="width: calc(4.4ch);" maxlength="4"/>
+                            </div>
+                        </div>
+                        <div class="date-input-enter d-none">
+                            <div class="press-enter d-flex align-items-center mt-3">
+                                <div class="specialBtn-purpose">
+                                    <button type="button" class="global-button ok">OK <svg height="13" width="16">
+                                            <path
+                                                d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z">
+                                            </path>
+                                        </svg></button>
+                                </div>
+                                <div class="press-enter-text pl-2">
+                                    <span class="word">press</span>
+                                    <strong>Enter ↵</strong>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -113,21 +155,6 @@
                             <h3 class="mb-0 global-header-para pl-2">Start Rating</h3>
                         </div>
                         <div class="start-rating mt-3"></div>
-                        <div class="start-rating-enter d-none">
-                            <div class="press-enter d-flex align-items-center mt-3">
-                                <div class="specialBtn-purpose">
-                                    <button type="button" class="global-button ok">OK <svg height="13" width="16">
-                                            <path
-                                                d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z">
-                                            </path>
-                                        </svg></button>
-                                </div>
-                                <div class="press-enter-text pl-2">
-                                    <span class="word">press</span>
-                                    <strong>Enter ↵</strong>
-                                </div>
-                            </div>
-                        </div>
                     </section>
                     <section class="la d-none">
                         <div class="global-header d-flex align-items-center">
@@ -203,7 +230,7 @@
                             <h3 class="mb-0 global-header-para pl-2">Picture Choice</h3>
                         </div>
                         <div class="row mt-2">
-                            <div class="col-md-3 col-sm-6 col-12">
+                            <div class="col-md-3 col-6">
                                 <div class="div-pic">
                                     <div class="div-pic-image text-center">
                                         <img class="img-fluid" src="assets/img/City_Landscape_Background.jpg" title="Image" title="Image" style="pointer-events: none;"/>
@@ -219,7 +246,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 col-sm-6 col-12 mt-3 mt-sm-0">
+                            <div class="col-md-3 col-6">
                                 <div class="div-pic">
                                     <div class="div-pic-image text-center">
                                         <img class="img-fluid" src="assets/img/City_Landscape_Background.jpg" title="Image" title="Image" style="pointer-events: none;"/>
@@ -235,7 +262,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 col-sm-6 col-12 mt-3 mt-md-0">
+                            <div class="col-md-3 col-6 mt-3 mt-md-0">
                                 <div class="div-pic">
                                     <div class="div-pic-image text-center">
                                         <img class="img-fluid" src="assets/img/City_Landscape_Background.jpg" title="Image" title="Image" style="pointer-events: none;"/>
@@ -251,7 +278,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 col-sm-6 col-12 mt-3 mt-md-0">
+                            <div class="col-md-3 col-6 mt-3 mt-md-0">
                                 <div class="div-pic">
                                     <div class="div-pic-image text-center">
                                         <img class="img-fluid" src="assets/img/City_Landscape_Background.jpg" title="Image" title="Image" style="pointer-events: none;"/>
@@ -301,6 +328,41 @@
                             </li>
                             <li class="global-header-ul-li-special">
                                 <div class="press-enter d-flex align-items-center mt-3">
+                                    <div class="specialBtn-purpose">
+                                        <button type="button" class="global-button ok">OK <svg height="13" width="16">
+                                                <path
+                                                    d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z">
+                                                </path>
+                                            </svg></button>
+                                    </div>
+                                    <div class="press-enter-text pl-2">
+                                        <span class="word">press</span>
+                                        <strong>Enter ↵</strong>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="selectBoxSection d-none">
+                        <div class="global-header d-flex align-items-center">
+                            <span class="global-header-span">
+                                2 <svg height="10" width="11">
+                                    <path d="M7.586 5L4.293 1.707 5.707.293 10.414 5 5.707 9.707 4.293 8.293z"></path>
+                                    <path d="M8 4v2H0V4z"></path>
+                                </svg></span>
+                            <h3 class="mb-0 global-header-para pl-2">SelectBox</h3>
+                        </div>
+                        <ul class="global-header-ul mt-2">
+                            <li class="global-header-ul-li-select">
+                                <select id="selectOption">
+                                    <option value="0">Select an Option</option>
+                                    <option value="1">Option1</option>
+                                    <option value="2">Option2</option>
+                                    <option value="3">Option3</option>
+                                  </select>
+                            </li>
+                            <li class="global-header-ul-li-special mt-3">
+                                <div class="press-enter d-flex align-items-center">
                                     <div class="specialBtn-purpose">
                                         <button type="button" class="global-button ok">OK <svg height="13" width="16">
                                                 <path
@@ -574,6 +636,7 @@
         integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
         crossorigin="anonymous"></script>
         <script src="assets/js/jquery.star-rating-svg.js"></script>
+        <script src="assets/js/jquery.nice-select.js"></script>
     <script src="assets/js/intlTelInput.js"></script>
     <script src="index.js"></script>
     <!-- JS Scripts -->
