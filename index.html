@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="assets/css/star-rating-svg.css" />
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/intlTelInput.css" />
+    <link rel="stylesheet" href="assets/css/jquery.fileuploader.min.css">
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="responsive.css" />
 </head>
@@ -36,7 +37,7 @@
         <div class="bottomContent footer-pw d-none">
             <div class="footer-pw-content d-flex align-items-center">
                 <div class="twoCont mr-2">
-                    <p class="mb-0 text-muted" style="font-size: 12px"><span id="changeNum">0</span> of 13 answered</p>
+                    <p class="mb-0 text-muted" style="font-size: 12px"><span id="changeNum">0</span> of 14 answered</p>
                     <div class="progress">
                         <div class="progress-bar progress-bar-striped progress-bar-animated" id="progress"
                             role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
@@ -152,7 +153,7 @@
                                     <path d="M7.586 5L4.293 1.707 5.707.293 10.414 5 5.707 9.707 4.293 8.293z"></path>
                                     <path d="M8 4v2H0V4z"></path>
                                 </svg></span>
-                            <h3 class="global-header-heading">Start Rating</h3>
+                            <h3 class="global-header-heading">Star Rating</h3>
                         </div>
                         <div class="start-rating mt-3"></div>
                     </section>
@@ -313,10 +314,23 @@
                            </div>
                         </div>
                     </section>
-                    <section class="phoneSection d-none">
+                    <section class="ImageUploader d-none">
                         <div class="global-header">
                             <span class="global-header-number">
                                 6 <svg height="10" width="11">
+                                    <path d="M7.586 5L4.293 1.707 5.707.293 10.414 5 5.707 9.707 4.293 8.293z"></path>
+                                    <path d="M8 4v2H0V4z"></path>
+                                </svg></span>
+                            <h3 class="global-header-heading">Image Uploader</h3>
+                        </div>
+                        <form action="" method="post" enctype="multipart/form-data">
+                            <input type="file" name="files">
+                        </form>
+                    </section>
+                    <section class="phoneSection d-none">
+                        <div class="global-header">
+                            <span class="global-header-number">
+                                7 <svg height="10" width="11">
                                     <path d="M7.586 5L4.293 1.707 5.707.293 10.414 5 5.707 9.707 4.293 8.293z"></path>
                                     <path d="M8 4v2H0V4z"></path>
                                 </svg></span>
@@ -346,7 +360,7 @@
                     <section class="selectBoxSection d-none">
                         <div class="global-header">
                             <span class="global-header-number">
-                                7 <svg height="10" width="11">
+                                8 <svg height="10" width="11">
                                     <path d="M7.586 5L4.293 1.707 5.707.293 10.414 5 5.707 9.707 4.293 8.293z"></path>
                                     <path d="M8 4v2H0V4z"></path>
                                 </svg></span>
@@ -381,7 +395,7 @@
                     <section class="shortText d-none">
                         <div class="global-header">
                             <span class="global-header-number">
-                                8 <svg height="10" width="11">
+                                9 <svg height="10" width="11">
                                     <path d="M7.586 5L4.293 1.707 5.707.293 10.414 5 5.707 9.707 4.293 8.293z"></path>
                                     <path d="M8 4v2H0V4z"></path>
                                 </svg></span>
@@ -412,7 +426,7 @@
                     <section class="emailAddress d-none">
                         <div class="global-header">
                             <span class="global-header-number">
-                                9 <svg height="10" width="11">
+                                10 <svg height="10" width="11">
                                     <path d="M7.586 5L4.293 1.707 5.707.293 10.414 5 5.707 9.707 4.293 8.293z"></path>
                                     <path d="M8 4v2H0V4z"></path>
                                 </svg></span>
@@ -443,7 +457,7 @@
                     <section class="numberSection d-none">
                         <div class="global-header">
                             <span class="global-header-number">
-                                10 <svg height="10" width="11">
+                                11 <svg height="10" width="11">
                                     <path d="M7.586 5L4.293 1.707 5.707.293 10.414 5 5.707 9.707 4.293 8.293z"></path>
                                     <path d="M8 4v2H0V4z"></path>
                                 </svg></span>
@@ -474,7 +488,7 @@
                     <section class="websiteURL d-none">
                         <div class="global-header">
                             <span class="global-header-number">
-                                11 <svg height="10" width="11">
+                                12 <svg height="10" width="11">
                                     <path d="M7.586 5L4.293 1.707 5.707.293 10.414 5 5.707 9.707 4.293 8.293z"></path>
                                     <path d="M8 4v2H0V4z"></path>
                                 </svg></span>
@@ -505,7 +519,7 @@
                     <section class="longText d-none">
                         <div class="global-header">
                             <span class="global-header-number">
-                                12 <svg height="10" width="11">
+                                14 <svg height="10" width="11">
                                     <path d="M7.586 5L4.293 1.707 5.707.293 10.414 5 5.707 9.707 4.293 8.293z"></path>
                                     <path d="M8 4v2H0V4z"></path>
                                 </svg></span>
@@ -552,7 +566,7 @@
                     <section class="yesNo d-none">
                         <div class="global-header">
                             <span class="global-header-number">
-                                13 <svg height="10" width="11">
+                                14 <svg height="10" width="11">
                                     <path d="M7.586 5L4.293 1.707 5.707.293 10.414 5 5.707 9.707 4.293 8.293z"></path>
                                     <path d="M8 4v2H0V4z"></path>
                                 </svg></span>
@@ -631,7 +645,8 @@
         crossorigin="anonymous"></script>
         <script src="assets/js/jquery.star-rating-svg.js"></script>
         <script src="assets/js/jquery.nice-select.js"></script>
-    <script src="assets/js/intlTelInput.js"></script>
+        <script src="assets/js/intlTelInput.js"></script>
+    <script src="assets/js/jquery.fileuploader.min.js"></script>
     <script src="index.js"></script>
     <!-- JS Scripts -->
 </body>

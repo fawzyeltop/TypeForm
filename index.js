@@ -11,7 +11,7 @@ $(() => {
         const counterFunc = () => {
             counter++;
             $("#changeNum").text(`${counter}`);
-            $("#progress").attr('style', `width: ${counter * (100 / 13)}%`);
+            $("#progress").attr('style', `width: ${counter * (100 / 14)}%`);
         }
 
         const checks = () => {
@@ -70,6 +70,7 @@ $(() => {
                 const findEnter = $("body").find('.enter');    
                 if (findEnter.hasClass("submit")) return visitURL();
                 if (findEnter.hasClass("starRating")) return;
+                if (findEnter.hasClass("ImageUploader")) return;
                 checks();
             }
         });
@@ -130,11 +131,25 @@ $(() => {
             ratedColors: ['rgb(31, 127, 255)', 'rgb(31, 127, 255)', 'rgb(31, 127, 255)', 'rgb(31, 127, 255)', 'rgb(31, 127, 255)'],
             useGradient: false,
             callback: () => {
-                const findEnter = $("body").find('.enter');               
                 counterFunc();
+                const findEnter = $("body").find('.enter');               
                 findEnter.next().addClass("enter d-block animate__animated animate__slideInUp");
                 findEnter.first().removeClass("enter").addClass("d-noneN");
             }
+        });
+        $('input:file').fileuploader({
+            limit: 1,
+            maxSize: 10,
+            fileMaxSize: 10,
+            afterSelect: function() {
+               setTimeout(() => {
+                counterFunc();
+                const findEnter = $("body").find('.enter');               
+                findEnter.next().addClass("enter d-block animate__animated animate__slideInUp");
+                findEnter.first().removeClass("enter").addClass("d-noneN");
+               }, 1000)
+            },
+
         });
     }
     const initPhone = () => {
@@ -174,5 +189,4 @@ $(() => {
     }
 
     initGlobal();
-
 });
