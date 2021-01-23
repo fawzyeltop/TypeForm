@@ -11,103 +11,66 @@ $(() => {
         const counterFunc = () => {
             counter++;
             $("#changeNum").text(`${counter}`);
-            $("#progress").attr('style', `width: ${counter * 20}%`);
+            $("#progress").attr('style', `width: ${counter * (100 / 13)}%`);
         }
 
-
-
-        $(".ok").click(() => {
-            if ($("body").find('.enter').hasClass("startSection")) {
+        const checks = () => {
+            const findEnter = $("body").find('.enter');               
+            if (findEnter.hasClass("startSection")) {
                 $(".footer-pw").addClass('d-flex animate__animated animate__fadeIn');
             }
-            if ($("body").find('.enter').hasClass("yesNo")) {
+            if (findEnter.hasClass("dateInput")) {
+                if (findEnter.find('#day').val().trim().length === 2 && findEnter.find('#month').val().trim().length === 2 && findEnter.find('#year').val().trim().length === 4) counterFunc();
+            }
+            if (findEnter.hasClass("opinionScale")) {
+                if (findEnter.find(".opinion-sacle-span-required").length > 0) {
+                    counterFunc();
+                }
+            } 
+            if (findEnter.hasClass("pictureChoice") || findEnter.hasClass("la") || findEnter.hasClass("yesNo")) {
+                if (findEnter.find(".global-header-ul-li-required").length > 0) {
+                    counterFunc();
+                }
+            }
+            if (findEnter.hasClass("yesNo")) {
                 $(".footer-pw").addClass('animate__animated animate__fadeOut');
                 $(".footer-create").addClass('d-flex animate__animated animate__fadeIn');
             }
-            if ($("body").find('.enter').hasClass("pictureChoice") || $("body").find('.enter').hasClass("la") || $("body").find('.enter').hasClass("yesNo")) {
-                if ($("body").find('.enter').find(".global-header-ul-li-required").length > 0) {
-                    counterFunc();
-                }
+           
+            if (findEnter.hasClass("selectBoxSection")) {
+                if (findEnter.find('#selectOption').val() === "1" || findEnter.find('#selectOption').val() === "2" || findEnter.find('#selectOption').val() === "3") counterFunc();
             }
-            if ($("body").find('.enter').hasClass("dateInput")) {
-                if ($("body").find('.enter').find('#day').val().trim().length === 2 && $("body").find('.enter').find('#month').val().trim().length === 2 && $("body").find('.enter').find('#year').val().trim().length === 4) counterFunc();
+            if (findEnter.hasClass("phoneSection")) {
+                if (findEnter.find('#phone').val().length > 0) counterFunc();
             }
-            if ($("body").find('.enter').hasClass("selectBoxSection")) {
-                if ($("body").find('.enter').find('#selectOption').val() === "1" || $("body").find('.enter').find('#selectOption').val() === "2" || $("body").find('.enter').find('#selectOption').val() === "3") counterFunc();
+            if (findEnter.hasClass("shortText")) {
+                if (findEnter.find('#short').val().length > 0) counterFunc();
             }
-            if ($("body").find('.enter').hasClass("opinionScale")) {
-                if ($("body").find('.enter').find(".opinion-sacle-span-required").length > 0) {
-                    counterFunc();
-                }
+            if (findEnter.hasClass("emailAddress")) {
+                if (findEnter.find('#email').val().length > 0) counterFunc();
             }
-            if ($("body").find('.enter').hasClass("submit")) return visitURL();
-            if ($("body").find('.enter').hasClass("phoneSection")) {
-                if ($("body").find('.enter').find('#phone').val().length > 0) counterFunc();
+            if (findEnter.hasClass("websiteURL")) {
+                if (findEnter.find('#url').val().length > 0) counterFunc();
             }
-            
-            if ($("body").find('.enter').hasClass("shortText")) {
-                if ($("body").find('.enter').find('#short').val().length > 0) counterFunc();
+            if (findEnter.hasClass("numberSection")) {
+                if (findEnter.find('#number').val().length > 0) counterFunc();
             }
-            if ($("body").find('.enter').hasClass("emailAddress")) {
-                if ($("body").find('.enter').find('#email').val().length > 0) counterFunc();
+            if (findEnter.hasClass("longText")) {
+                if (findEnter.find('#long').val().length > 0) counterFunc();
             }
-            if ($("body").find('.enter').hasClass("websiteURL")) {
-                if ($("body").find('.enter').find('#url').val().length > 0) counterFunc();
-            }
-            if ($("body").find('.enter').hasClass("longText")) {
-                if ($("body").find('.enter').find('#long').val().length > 0) counterFunc();
-            }
-            $("body").find('.enter').next().addClass("enter d-block animate__animated animate__slideInUp");
-            $("body").find('.enter').first().removeClass("enter").addClass("d-noneN");
+            findEnter.next().addClass("enter d-block animate__animated animate__slideInUp");
+            findEnter.first().removeClass("enter").addClass("d-noneN");
+        }
 
-        });
+        // Ok & Enter Shortcut
+        $(".ok").click(() => { checks(); });
 
         $('body').on("keyup", (e) => {
-            if (e.keyCode == 13) {
-
-                if ($("body").find('.enter').hasClass("startSection")) {
-                    $(".footer-pw").addClass('d-flex animate__animated animate__fadeIn');
-                }
-                if ($("body").find('.enter').hasClass("pictureChoice") || $("body").find('.enter').hasClass("la") || $("body").find('.enter').hasClass("yesNo")) {
-                    if ($("body").find('.enter').find(".global-header-ul-li-required").length > 0) {
-                        counterFunc();
-                    }
-                }
-                if ($("body").find('.enter').hasClass("opinionScale")) {
-                    if ($("body").find('.enter').find(".opinion-sacle-span-required").length > 0) {
-                        counterFunc();
-                    }
-                }
-                if ($("body").find('.enter').hasClass("dateInput")) {
-                    if ($("body").find('.enter').find('#day').val().trim().length === 2 && $("body").find('.enter').find('#month').val().trim().length === 2 && $("body").find('.enter').find('#year').val().trim().length === 4) counterFunc();
-                }
-                if ($("body").find('.enter').hasClass("selectBoxSection")) {
-                    if ($("body").find('.enter').find('#selectOption').val() === "1" || $("body").find('.enter').find('#selectOption').val() === "2" || $("body").find('.enter').find('#selectOption').val() === "3") counterFunc();
-                }
-                if ($("body").find('.enter').hasClass("phoneSection")) {
-                    if ($("body").find('.enter').find('#phone').val().length > 0) counterFunc();
-                }
-                if ($("body").find('.enter').hasClass("shortText")) {
-                    if ($("body").find('.enter').find('#short').val().length > 0) counterFunc();
-                }
-                if ($("body").find('.enter').hasClass("emailAddress")) {
-                    if ($("body").find('.enter').find('#email').val().length > 0) counterFunc();
-                }
-                if ($("body").find('.enter').hasClass("websiteURL")) {
-                    if ($("body").find('.enter').find('#url').val().length > 0) counterFunc();
-                }
-                if ($("body").find('.enter').hasClass("longText")) {
-                    if ($("body").find('.enter').find('#long').val().length > 0) counterFunc();
-                }
-                if ($("body").find('.enter').hasClass("submit")) return visitURL();
-                if ($("body").find('.enter').hasClass("starRating")) return;
-                if ($("body").find('.enter').hasClass("yesNo")) {
-                    $(".footer-pw").addClass('animate__animated animate__fadeOut');
-                    $(".footer-create").addClass('d-flex animate__animated animate__fadeIn');
-                }
-                $("body").find('.enter').next().addClass("enter d-block animate__animated animate__slideInUp");
-                $("body").find('.enter').first().removeClass("enter").addClass("d-noneN");
-
+            if (e.keyCode === 13) {
+                const findEnter = $("body").find('.enter');    
+                if (findEnter.hasClass("submit")) return visitURL();
+                if (findEnter.hasClass("starRating")) return;
+                checks();
             }
         });
 
@@ -146,7 +109,7 @@ $(() => {
         });
         $(".elementShowOk").keyup((e) => {
             $(e.target.parentElement.parentElement).children().last().addClass("d-block");
-        })  
+        })
         $("#day, #month, #year").keyup((e) => {
             $(e.target.parentElement.parentElement).next().addClass("d-block");
         })
@@ -167,9 +130,10 @@ $(() => {
             ratedColors: ['rgb(31, 127, 255)', 'rgb(31, 127, 255)', 'rgb(31, 127, 255)', 'rgb(31, 127, 255)', 'rgb(31, 127, 255)'],
             useGradient: false,
             callback: () => {
-               counterFunc();
-                $("body").find('.enter').next().addClass("enter d-block animate__animated animate__slideInUp");
-                $("body").find('.enter').first().removeClass("enter").addClass("d-noneN");
+                const findEnter = $("body").find('.enter');               
+                counterFunc();
+                findEnter.next().addClass("enter d-block animate__animated animate__slideInUp");
+                findEnter.first().removeClass("enter").addClass("d-noneN");
             }
         });
     }
